@@ -33,7 +33,13 @@ public class RegistraceController {
       Period doba = registraceForm.getNarozeni().until(LocalDate.now());
       int vek = doba.getYears();
       if (vek < 18 & vek > 9) {
-        bindingResult.rejectValue("vek", "", "Neodpovídáte potřebnému věku...");
+        bindingResult.rejectValue("vek", "", "Neodpovídáte potřebnému věku.");
+        return "formular";
+      }
+
+      int vyberSportu = registraceForm.getOblibenySport().size();
+      if (vyberSportu < 2) {
+        bindingResult.rejectValue("vyberSportu", "", "Musíte vybrat minimálně dva sporty.");
         return "formular";
       }
       return "formular";
