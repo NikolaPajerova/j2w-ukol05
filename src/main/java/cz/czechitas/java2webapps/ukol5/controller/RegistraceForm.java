@@ -13,9 +13,9 @@ public class RegistraceForm {
     private String prijmeni;
     @NotEmpty
     private LocalDate narozeni;
-    @NotEmpty
+    @NotNull
     private Pohlavi pohlavi;
-    @NotEmpty
+    @NotNull
     private SportEnum sport;
     @NotEmpty
     @NotBlank
