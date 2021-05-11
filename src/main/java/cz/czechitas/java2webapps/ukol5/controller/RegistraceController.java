@@ -31,7 +31,8 @@ public class RegistraceController {
       }
       return null;
 /*
-      int vek = registraceForm.getNarozeni().getYears();
+      Period doba = registraceForm.getNarozeni().until(LocalDate.now());
+      int vek = doba.getYears();
       if (vek < 18 & vek > 9) {
         bindingResult.rejectValue("vek", "", "Neodpovídáte potřebnému věku...");
         return "/formular";
