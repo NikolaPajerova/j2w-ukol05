@@ -11,7 +11,7 @@ public class RegistraceForm {
     private String jmeno;
     @NotBlank
     private String prijmeni;
-    @NotEmpty
+    @NotNull
     private LocalDate narozeni;
     @NotNull
     private Pohlavi pohlavi;
@@ -53,7 +53,7 @@ public class RegistraceForm {
         this.prijmeni = prijmeni;
     }
 
-    public @NotEmpty LocalDate getNarozeni() {
+    public LocalDate getNarozeni() {
         return narozeni;
     }
 

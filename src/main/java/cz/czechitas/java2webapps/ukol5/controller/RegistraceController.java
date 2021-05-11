@@ -25,18 +25,18 @@ public class RegistraceController {
     }
 
     @PostMapping("")
-    public String form(@ModelAttribute("form") @Valid RegistraceForm registraceForm, BindingResult bindingResult) {
+    public String form(@ModelAttribute("registForm") @Valid RegistraceForm registraceForm, BindingResult bindingResult) {
       if (bindingResult.hasErrors()) {
-        return "/formular";
+        return "formular";
       }
-      return null;
-/*
+
       Period doba = registraceForm.getNarozeni().until(LocalDate.now());
       int vek = doba.getYears();
       if (vek < 18 & vek > 9) {
         bindingResult.rejectValue("vek", "", "Neodpovídáte potřebnému věku...");
-        return "/formular";
-      }*/
+        return "formular";
+      }
+      return "formular";
     }
 
 }

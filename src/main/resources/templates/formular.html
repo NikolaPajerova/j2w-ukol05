@@ -40,32 +40,32 @@
 
         <div>
             <div>
-                <input id="sport1" type="checkbox" name="sport" th:checked="${registForm.sport}"/>
+                <input id="sport1" type="checkbox" name="sport" th:checked="${registForm.sport}" value="PLAVANI"/>
                 <label class="nabidka" for="sport1">plavání</label>
             </div>
             <div class="error" th:if="${#fields.hasErrors('registForm.sport')}" th:errors="${registForm.sport}"></div>
 
             <div>
-                <input id="sport2" type="checkbox" name="sport" th:checked="${registForm.sport}"/>
+                <input id="sport2" type="checkbox" name="sport" th:checked="${registForm.sport}" value="BEH"/>
                 <label class="nabidka" for="sport2">běh</label>
             </div>
             <div class="error" th:if="${#fields.hasErrors('registForm.sport')}" th:errors="${registForm.sport}"></div>
 
             <div>
-                <input id="sport3" type="checkbox" name="sport" th:checked="${registForm.sport}"/>
+                <input id="sport3" type="checkbox" name="sport" th:checked="${registForm.sport}" value="CYKLISTIKA"/>
                 <label class="nabidka" for="sport3">cyklistika</label>
             </div>
             <div class="error" th:if="${#fields.hasErrors('registForm.sport')}" th:errors="${registForm.sport}"></div>
 
             <div>
-                <input id="sport4" type="checkbox" name="sport" th:checked="${registForm.sport}"/>
+                <input id="sport4" type="checkbox" name="sport" th:checked="${registForm.sport}" value="BADMINTON"/>
                 <label class="nabidka" for="sport4">badminton</label>
             </div>
             <div class="error" th:if="${#fields.hasErrors('registForm.sport')}" th:errors="${registForm.sport}"></div>
 
             <div>
-                <input id="sport5" type="checkbox" name="sport" th:checked="${registForm.sport}"/>
-                <label class="nabidka" for="sport5">valleyball</label>
+                <input id="sport5" type="checkbox" name="sport" th:checked="${registForm.sport}" value="VOLLEYBALL"/>
+                <label class="nabidka" for="sport5">volleyball</label>
             </div>
             <div class="error" th:if="${#fields.hasErrors('registForm.sport')}" th:errors="${registForm.sport}"></div>
         </div>
