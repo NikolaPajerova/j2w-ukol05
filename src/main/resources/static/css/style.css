@@ -16,93 +16,27 @@ body {
     background: white url(https://source.unsplash.com/uXtq8xGUX5U) center center/cover no-repeat;
 }
 
-a {
-    color: black;
-    text-decoration: none;
+h1 {
+    text-align: center;
 }
 
-.seznam {
+.nabidka {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    padding: 2em;
-}
-
-.vizitka {
-    width: 36em;
-    height: 16em;
-    border: 1px solid gray;
-    background-color: white;
-    margin: 1em;
-    padding: 1.5em;
-    box-shadow: 5px 5px 10px black;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    transition: box-shadow 0.2s, transform 0.2s;
 }
 
-.vizitka--nova {
-    background-color: #FFFFFF66;
-    border: 3px dotted white;
+.radek {
+    display: block;
+    margin-top: 1em;
+}
+
+.controls.radek {
+    display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-a:hover .vizitka {
-    box-shadow: 10px 10px 10px black;
-    transform: translate(-5px, -5px);
-    transition: box-shadow 0.2s, transform 0.2s;
-}
-
-.jmeno {
+.error {
+    color: red;
     font-weight: bold;
-    font-size: 18pt;
-    text-align: center;
-    margin: 1em 0 1em 0;
-}
-
-.firma {
-    text-align: center;
-    margin-bottom: 2em;
-}
-
-.udaje {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.kontakty {
-    text-align: right;
-}
-
-.detail {
-    min-height: 100vh;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.detail nav {
-    margin: 1em;
-    font-size: 150%;
-}
-
-.detail nav a {
-    color: white;
-}
-
-.detail nav a:hover {
-    text-decoration: underline;
-}
-
-.mapa {
-    width: 36em;
-    height: 36em;
-    border: 1px solid gray;
-    margin: 1em;
-    box-shadow: 5px 5px 10px black;
 }

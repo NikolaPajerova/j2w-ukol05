@@ -5,8 +5,85 @@
     <title>Registrace na letní dětský tábor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 </head>
 <body>
-    TODO
+<div>
+    <form  th:action="@{formular}" method="post">
+        <h1>Zadejte zde potřebné údaje:</h1>
+        <label class="nabidka" for="jmeno">Jméno:</label>
+        <input id="jmeno" type="text" th:field="${registForm.jmeno}"/>
+        <div class="error" th:if="${#fields.hasErrors('registForm.jmeno')}" th:errors="${registForm.jmeno}"></div>
+
+        <label class="nabidka" for="prijmeni">Příjmení:</label>
+        <input id="prijmeni" type="text" th:field="${registForm.prijmeni}"/>
+        <div class="error" th:if="${#fields.hasErrors('registForm.prijmeni')}" th:errors="${registForm.prijmeni}"></div>
+
+        <div>Pohlaví:</div>
+        <div>
+            <div>
+                <input id="zena" type="radio" th:field="${registForm.pohlavi}" value="DIVKA"/>
+                <label class="nabidka" for="zena">dívka</label>
+            </div>
+            <div>
+                <input id="muz" type="radio" th:field="${registForm.pohlavi}" value="CHLAPEC"/>
+                <label class="nabidka" for="muz">chlapec</label>
+            </div>
+        </div>
+        <div class="error" th:if="${#fields.hasErrors('registForm.pohlavi')}" th:errors="${registForm.pohlavi}"></div>
+
+        <div>
+            <div>
+                <input id="sport1" type="checkbox" name="sport" th:checked="${registForm.sport}"/>
+                <label class="nabidka" for="sport1">plavání</label>
+            </div>
+            <div class="error" th:if="${#fields.hasErrors('registForm.sport')}" th:errors="${registForm.sport}"></div>
+
+            <div>
+                <input id="sport2" type="checkbox" name="sport" th:checked="${registForm.sport}"/>
+                <label class="nabidka" for="sport2">běh</label>
+            </div>
+            <div class="error" th:if="${#fields.hasErrors('registForm.sport')}" th:errors="${registForm.sport}"></div>
+
+            <div>
+                <input id="sport3" type="checkbox" name="sport" th:checked="${registForm.sport}"/>
+                <label class="nabidka" for="sport3">cyklistika</label>
+            </div>
+            <div class="error" th:if="${#fields.hasErrors('registForm.sport')}" th:errors="${registForm.sport}"></div>
+
+            <div>
+                <input id="sport4" type="checkbox" name="sport" th:checked="${registForm.sport}"/>
+                <label class="nabidka" for="sport4">badminton</label>
+            </div>
+            <div class="error" th:if="${#fields.hasErrors('registForm.sport')}" th:errors="${registForm.sport}"></div>
+
+            <div>
+                <input id="sport5" type="checkbox" name="sport" th:checked="${registForm.sport}"/>
+                <label class="nabidka" for="sport5">valleyball</label>
+            </div>
+            <div class="error" th:if="${#fields.hasErrors('registForm.sport')}" th:errors="${registForm.sport}"></div>
+        </div>
+
+        <label for="turnus">Výběr turnusu:</label>
+        <select class="nabidka" id="turnus" th:field="${registForm.turnus}">
+            <option value="1">12.-18. července</option>
+            <option value="2">19.-25. července</option>
+            <option value="3">26. července-1. srpna</option>
+        </select>
+        <div class="error" th:if="${#fields.hasErrors('registForm.turnus')}" th:errors="${registForm.turnus}"></div>
+
+        <label class="nabidka" for="email">E-mail na rodiče:</label>
+        <input id="email" th:field="${registForm.email}"/>
+        <div class="error" th:if="${#fields.hasErrors('foregistFormrm.email')}" th:errors="${registForm.email}"></div>
+
+        <label class="nabidka" for="telefon" >Telefon na rodiče:</label>
+        <input id="telefon" th:field="${registForm.telefon}"/>
+        <div class="error" th:if="${#fields.hasErrors('foregistFormrm.telefon')}" th:errors="${registForm.telefon}"></div>
+
+        <div class="radek controls">
+            <button type="submit">Odeslat registraci</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>
