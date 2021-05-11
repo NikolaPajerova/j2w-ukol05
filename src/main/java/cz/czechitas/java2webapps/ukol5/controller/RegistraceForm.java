@@ -53,7 +53,7 @@ public class RegistraceForm {
         this.prijmeni = prijmeni;
     }
 
-    public LocalDate getNarozeni() {
+    public @NotEmpty LocalDate getNarozeni() {
         return narozeni;
     }
 

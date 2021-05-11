@@ -19,6 +19,12 @@
         <input id="prijmeni" type="text" th:field="${registForm.prijmeni}"/>
         <div class="error" th:if="${#fields.hasErrors('registForm.prijmeni')}" th:errors="${registForm.prijmeni}"></div>
 
+        <div>
+            <label class="nabidka" for="narozeni">Datum narození:</label>
+            <input id="narozeni" type="date" th:field="${registForm.narozeni}"/>
+            <div class="error" th:if="${#fields.hasErrors('registForm.narozeni')}" th:errors="${registForm.narozeni}"></div>
+        </div>
+
         <div>Pohlaví:</div>
         <div>
             <div>
@@ -72,13 +78,17 @@
         </select>
         <div class="error" th:if="${#fields.hasErrors('registForm.turnus')}" th:errors="${registForm.turnus}"></div>
 
-        <label class="nabidka" for="email">E-mail na rodiče:</label>
-        <input id="email" th:field="${registForm.email}"/>
-        <div class="error" th:if="${#fields.hasErrors('foregistFormrm.email')}" th:errors="${registForm.email}"></div>
+        <div>
+            <label class="nabidka" for="email">E-mail na rodiče:</label>
+            <input id="email" th:field="${registForm.email}"/>
+            <div class="error" th:if="${#fields.hasErrors('registForm.email')}" th:errors="${registForm.email}"></div>
+        </div>
 
-        <label class="nabidka" for="telefon" >Telefon na rodiče:</label>
-        <input id="telefon" th:field="${registForm.telefon}"/>
-        <div class="error" th:if="${#fields.hasErrors('foregistFormrm.telefon')}" th:errors="${registForm.telefon}"></div>
+        <div>
+            <label class="nabidka" for="telefon" >Telefon na rodiče:</label>
+            <input id="telefon" th:field="${registForm.telefon}"/>
+            <div class="error" th:if="${#fields.hasErrors('registForm.telefon')}" th:errors="${registForm.telefon}"></div>
+        </div>
 
         <div class="radek controls">
             <button type="submit">Odeslat registraci</button>
