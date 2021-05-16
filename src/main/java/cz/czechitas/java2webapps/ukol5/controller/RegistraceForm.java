@@ -1,5 +1,6 @@
 package cz.czechitas.java2webapps.ukol5.controller;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.validation.constraints.*;
@@ -11,12 +12,11 @@ public class RegistraceForm {
     private String jmeno;
     @NotBlank
     private String prijmeni;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @NotNull
     private LocalDate narozeni;
     @NotNull
     private Pohlavi pohlavi;
-    @NotNull
-    private SportEnum sport;
     @NotEmpty
     @NotBlank
     private String turnus;
@@ -27,7 +27,7 @@ public class RegistraceForm {
     @NotBlank
     private String telefon;
 
-    private EnumSet<SportEnum> oblibenySport;
+    private EnumSet<SportEnum> oblibenySport = EnumSet.noneOf(SportEnum.class); //přiřadí se prázdná množina = existuje, ale nemá prvky
 
     public EnumSet<SportEnum> getOblibenySport() {
         return oblibenySport;
@@ -67,14 +67,6 @@ public class RegistraceForm {
 
     public void setPohlavi(Pohlavi pohlavi) {
         this.pohlavi = pohlavi;
-    }
-
-    public SportEnum getSport() {
-        return sport;
-    }
-
-    public void setSport(SportEnum sport) {
-        this.sport = sport;
     }
 
     public String getEmail() {
