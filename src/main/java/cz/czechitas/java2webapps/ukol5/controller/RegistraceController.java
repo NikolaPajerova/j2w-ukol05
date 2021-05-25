@@ -1,6 +1,5 @@
 package cz.czechitas.java2webapps.ukol5.controller;
 
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,15 +8,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
-import javax.validation.constraints.Null;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Random;
 
 /**
  * Kontroler obsluhující registraci účastníků dětského tábora.
  */
 @Controller
 public class RegistraceController {
+  private final Random random = new Random();
 
   @GetMapping("/")
     public ModelAndView formular() {
@@ -27,9 +27,9 @@ public class RegistraceController {
     }
 
     @PostMapping("")
-    public String form(@ModelAttribute("registForm") @Valid RegistraceForm registraceForm, BindingResult bindingResult) {
+    public Object form(@ModelAttribute("registForm") @Valid RegistraceForm registraceForm, BindingResult bindingResult) {
       if (bindingResult.hasErrors()) {
-        return "formular"; //vrací ModelAndView s názvem FORMULAR
+        return "formular";
       }
 
       Period doba = registraceForm.getNarozeni().until(LocalDate.now());
@@ -45,7 +45,10 @@ public class RegistraceController {
         bindingResult.rejectValue("oblibenySport", "", "Musíte vybrat minimálně dva sporty.");
         return "formular";
       }
-      return "formular";
+
+      return new ModelAndView("/objednano")
+              .addObject("kod", Math.abs(random.nextInt()))
+              .addObject("email", registraceForm.getEmail());
     }
 
 }
